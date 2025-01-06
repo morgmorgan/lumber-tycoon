@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnabuiwiu1l6n"]
+
+[ext_resource type="Script" path="res://scenes/game object/game_camera/game_camera.gd" id="1_afrrx"]
+
+[node name="GameCamera" type="Camera2D"]
+position_smoothing_enabled = true
+position_smoothing_speed = 2.5
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
+script = ExtResource("1_afrrx")

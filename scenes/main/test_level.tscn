@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://1y4vjxw8eute"]
+
+[ext_resource type="PackedScene" uid="uid://cgjdbkwyak38n" path="res://scenes/game object/player.tscn" id="1_5l5ae"]
+[ext_resource type="PackedScene" uid="uid://dnabuiwiu1l6n" path="res://scenes/game object/game_camera/game_camera.tscn" id="2_j5hko"]
+[ext_resource type="Texture2D" uid="uid://c6ahj6ls4npx2" path="res://icon.svg" id="3_jvhxo"]
+[ext_resource type="PackedScene" uid="uid://cxmhth1xa8xsl" path="res://scenes/component/interactable_component.tscn" id="4_vuwvv"]
+[ext_resource type="Texture2D" uid="uid://cqs57lrwbndae" path="res://slime.png" id="5_u5bjt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uo173"]
+radius = 17.01
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_5l5ae")]
+position = Vector2(577, 362)
+
+[node name="GameCamera" parent="." instance=ExtResource("2_j5hko")]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(219, 486)
+texture = ExtResource("3_jvhxo")
+
+[node name="InteractableComponent" parent="Icon" instance=ExtResource("4_vuwvv")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/InteractableComponent"]
+shape = SubResource("CircleShape2D_uo173")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(1004, 200)
+texture = ExtResource("3_jvhxo")
+
+[node name="Slime" type="Sprite2D" parent="."]
+position = Vector2(808, 407)
+texture = ExtResource("5_u5bjt")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Slime"]
+position = Vector2(0, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slime/StaticBody2D"]
+shape = SubResource("CircleShape2D_uo173")
