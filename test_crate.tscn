@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://hdx6a10y75hu"]
+
+[ext_resource type="Script" path="res://test_crate.gd" id="1_hb1jo"]
+[ext_resource type="PackedScene" uid="uid://cxmhth1xa8xsl" path="res://scenes/component/interactable_component.tscn" id="1_xt5p7"]
+[ext_resource type="Texture2D" uid="uid://df8gwpx1r7s3d" path="res://crate.png" id="2_31s5i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vcqhk"]
+radius = 90.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bv5f8"]
+radius = 45.0
+
+[node name="TestCrate" type="StaticBody2D"]
+script = ExtResource("1_hb1jo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_31s5i")
+
+[node name="InteractableComponent" parent="." instance=ExtResource("1_xt5p7")]
+interaction_text = "Search Crate"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+shape = SubResource("CircleShape2D_vcqhk")
+debug_color = Color(0.998483, 0, 0.140827, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_bv5f8")

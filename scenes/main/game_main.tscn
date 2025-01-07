@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmwiq4g7r6xer"]
+[gd_scene load_steps=3 format=3 uid="uid://cmwiq4g7r6xer"]
 
 [ext_resource type="PackedScene" uid="uid://1y4vjxw8eute" path="res://scenes/main/test_level.tscn" id="1_xhodw"]
+[ext_resource type="PackedScene" uid="uid://d3bps8x110omo" path="res://scenes/HUD/hud_manager.tscn" id="2_wdgpq"]
 
 [node name="GameMain" type="Node"]
 
 [node name="TestLevel" parent="." instance=ExtResource("1_xhodw")]
+
+[node name="HUDManager" parent="." instance=ExtResource("2_wdgpq")]

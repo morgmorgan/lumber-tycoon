@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyyr7m8jmgp51"]
+
+[ext_resource type="Script" path="res://scenes/HUD/interaction_text.gd" id="1_ls85m"]
+
+[node name="InteractionText" type="CanvasLayer"]
+script = ExtResource("1_ls85m")
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -68.5
+offset_top = -148.0
+offset_right = 68.5
+offset_bottom = -125.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "text go here hehe"

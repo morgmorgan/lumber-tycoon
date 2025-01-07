@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/game object/player.gd" id="1_eueij"]
 [ext_resource type="PackedScene" uid="uid://da0m6ws3pykon" path="res://scenes/component/velocity_component.tscn" id="2_rfeij"]
-[ext_resource type="Texture2D" uid="uid://cs5sxxixb4xnr" path="res://gobbly.png" id="3_0318r"]
+[ext_resource type="Texture2D" uid="uid://d2vspmvmtmbtv" path="res://beaver_sprite_sheet.png" id="3_xsfsl"]
 
 [sub_resource type="Animation" id="Animation_b3poy"]
 length = 0.001
@@ -95,7 +95,7 @@ _data = {
 radius = 48.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ncmcp"]
-radius = 5.0
+radius = 32.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0luep"]
 radius = 8.0
@@ -121,15 +121,15 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea2D"]
 shape = SubResource("CircleShape2D_aeoo5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5)
-shape = SubResource("CircleShape2D_ncmcp")
-
 [node name="Visuals" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Visuals"]
-texture = ExtResource("3_0318r")
+texture = ExtResource("3_xsfsl")
 offset = Vector2(0, -32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -25)
+shape = SubResource("CircleShape2D_ncmcp")
 
 [node name="CollisionArea2D" type="Area2D" parent="."]
 visible = false
