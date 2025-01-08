@@ -7,7 +7,9 @@ func _ready():
 	
 func on_interacted():
 	if checked:
-		print_debug("You've already checked this crate.")
+		#print_debug("You've already checked this crate.")
+		MessageDeus.request_message("You've already checked this crate.")
 	else:
-		print_debug("You search the crate, but find nothing.")
+		#print_debug("You search the crate, but find nothing.")
+		MessageDeus.request_message("You search the crate, but find nothing.")
 		checked = true

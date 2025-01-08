@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://scenes/autoload/game_manager.gd"
+MessageDeus="*res://scenes/autoload/dei/message_deus.gd"
 
 [input]
 
