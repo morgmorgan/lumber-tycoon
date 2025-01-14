@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyyr7m8jmgp51"]
+[gd_scene load_steps=4 format=3 uid="uid://dyyr7m8jmgp51"]
 
 [ext_resource type="Script" path="res://scenes/HUD/interaction_text.gd" id="1_ls85m"]
+[ext_resource type="Theme" uid="uid://cul2kk8mox0x3" path="res://main_theme.tres" id="2_0n1xi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4vmn"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="InteractionText" type="CanvasLayer"]
 script = ExtResource("1_ls85m")
@@ -17,8 +21,11 @@ offset_right = 68.5
 offset_bottom = -125.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_j4vmn")
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("2_0n1xi")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "text go here hehe"

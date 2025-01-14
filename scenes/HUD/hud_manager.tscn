@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3bps8x110omo"]
+[gd_scene load_steps=4 format=3 uid="uid://d3bps8x110omo"]
 
 [ext_resource type="PackedScene" uid="uid://dyyr7m8jmgp51" path="res://scenes/HUD/interaction_text.tscn" id="1_4jvvy"]
 [ext_resource type="PackedScene" uid="uid://s06opxbefvr2" path="res://scenes/HUD/popup_message_manager.tscn" id="2_t4nwc"]
+[ext_resource type="PackedScene" uid="uid://ctccgt2dk8r8j" path="res://scenes/HUD/resource_info_panel.tscn" id="3_upum4"]
 
 [node name="HUDManager" type="Node"]
 
 [node name="InteractionText" parent="." instance=ExtResource("1_4jvvy")]
 
 [node name="popupMessageManager" parent="." instance=ExtResource("2_t4nwc")]
+
+[node name="ResourceInfoPanel" parent="." instance=ExtResource("3_upum4")]

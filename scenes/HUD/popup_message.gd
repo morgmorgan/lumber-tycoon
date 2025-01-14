@@ -18,3 +18,6 @@ func play():
 
 func set_text(in_text : String):
 	$PanelContainer/Label.text = in_text
+
+func end_early():
+	$AnimationPlayer2.play("fade_early")
