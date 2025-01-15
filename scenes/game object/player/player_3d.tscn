@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://3mckj0c6t8po"]
+
+[ext_resource type="Script" path="res://scenes/game object/player/player_3d.gd" id="1_62cri"]
+[ext_resource type="Shader" path="res://resources/shaders/mobilePP.gdshader" id="2_11re4"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_egg3u"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_t3hyn"]
+size = Vector3(0.75, 0.5, 0.5)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nvccc"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_wq2xc"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_im70s"]
+render_priority = 0
+shader = ExtResource("2_11re4")
+shader_parameter/outlineColor = Color(0, 0, 0, 1)
+shader_parameter/depth_threshold = 0.025
+shader_parameter/normal_threshold = 0.5
+shader_parameter/normal_smoothing = 0.25
+shader_parameter/max_thickness = 1.7
+shader_parameter/min_thickness = 1.0
+shader_parameter/max_distance = 75.0
+shader_parameter/min_distance = 2.0
+shader_parameter/grazing_fresnel_power = 5.0
+shader_parameter/grazing_angle_mask_power = 1.0
+shader_parameter/grazing_angle_modulation_factor = 50.0
+
+[node name="Player3D" type="CharacterBody3D"]
+script = ExtResource("1_62cri")
+SPEED = 3.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Visuals" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_egg3u")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.285, -0.33)
+mesh = SubResource("BoxMesh_t3hyn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_nvccc")
+
+[node name="CameraMount" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraMount"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 2, 5)
+
+[node name="PostProcessFilter" type="MeshInstance3D" parent="CameraMount/Camera3D"]
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_wq2xc")
+surface_material_override/0 = SubResource("ShaderMaterial_im70s")
