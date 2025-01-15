@@ -4,7 +4,7 @@ func _ready():
 	$Panel.visible = false
 	GameManager.interaction_target_changed.connect(on_interaction_target_changed)
 	
-func on_interaction_target_changed(target : InteractableComponent, interaction_text : String):
+func on_interaction_target_changed(target : InteractableComponent3D, interaction_text : String):
 	if target == null:
 		$Panel.visible = false
 		return

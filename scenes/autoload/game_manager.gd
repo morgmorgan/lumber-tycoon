@@ -1,14 +1,14 @@
 extends Node
 
 # Player interaction
-var player_interaction_target : InteractableComponent
+var player_interaction_target : InteractableComponent3D
 var target_text : String
-signal interaction_target_changed(new_target : InteractableComponent, interaction_text : String)
+signal interaction_target_changed(new_target : InteractableComponent3D, interaction_text : String)
 
 func _ready():
 	player_interaction_target = null
 	
-func set_player_interaction_target(target : InteractableComponent, make_current : bool = true):
+func set_player_interaction_target(target : InteractableComponent3D, make_current : bool = true):
 	if !make_current:
 		if player_interaction_target == target:
 			player_interaction_target = null

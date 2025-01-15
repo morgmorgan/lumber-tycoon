@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cme2wtk1kljvi"]
+
+[ext_resource type="Script" path="res://scenes/game object/test crate/test_crate_3d.gd" id="1_uet2k"]
+[ext_resource type="PackedScene" uid="uid://c3ecyuk1s0l80" path="res://scenes/component/interactable_component_3d.tscn" id="1_yci00"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_k0qjh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cjxwu"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_txs4s"]
+height = 1.0
+radius = 2.0
+
+[node name="testCrate3D" type="StaticBody3D"]
+script = ExtResource("1_uet2k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_k0qjh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_cjxwu")
+
+[node name="InteractableComponent3D" parent="." instance=ExtResource("1_yci00")]
+interaction_text = "Search Crate"
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="InteractableComponent3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_txs4s")
