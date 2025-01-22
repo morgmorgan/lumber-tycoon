@@ -13,13 +13,13 @@ config_version=5
 config/name="lumber tycoon"
 run/main_scene="res://scenes/main/game_main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://resources/2d/icon.svg"
 
 [autoload]
 
 GameManager="*res://scenes/autoload/game_manager.gd"
 MessageDeus="*res://scenes/autoload/dei/message_deus.gd"
-StatsDeus="*res://stats_deus.gd"
+StatsDeus="*res://scenes/autoload/dei/stats_deus.gd"
 
 [display]
 

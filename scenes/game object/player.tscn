@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/game object/player.gd" id="1_eueij"]
 [ext_resource type="PackedScene" uid="uid://da0m6ws3pykon" path="res://scenes/component/velocity_component.tscn" id="2_rfeij"]
-[ext_resource type="Texture2D" uid="uid://d2vspmvmtmbtv" path="res://beaver_sprite_sheet.png" id="3_xsfsl"]
+[ext_resource type="Texture2D" uid="uid://d2vspmvmtmbtv" path="res://resources/2d/beaver_sprite_sheet.png" id="3_xsfsl"]
 
 [sub_resource type="Animation" id="Animation_b3poy"]
 length = 0.001

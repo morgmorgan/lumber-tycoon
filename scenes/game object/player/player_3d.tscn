@@ -1,14 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://3mckj0c6t8po"]
+[gd_scene load_steps=7 format=3 uid="uid://3mckj0c6t8po"]
 
 [ext_resource type="Script" path="res://scenes/game object/player/player_3d.gd" id="1_62cri"]
 [ext_resource type="Shader" path="res://resources/shaders/mobilePP.gdshader" id="2_11re4"]
+[ext_resource type="PackedScene" uid="uid://cw7wb5s43p1r3" path="res://resources/blend models/beaver.blend" id="2_m4fbi"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_egg3u"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_t3hyn"]
-size = Vector3(0.75, 0.5, 0.5)
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nvccc"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_hyxrd"]
+size = Vector3(2, 2, 2)
 
 [sub_resource type="QuadMesh" id="QuadMesh_wq2xc"]
 flip_faces = true
@@ -37,22 +34,17 @@ SPEED = 3.0
 
 [node name="Visuals" type="Node3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Visuals"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_egg3u")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Visuals"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.285, -0.33)
-mesh = SubResource("BoxMesh_t3hyn")
+[node name="beaver" parent="Visuals" instance=ExtResource("2_m4fbi")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_nvccc")
+shape = SubResource("BoxShape3D_hyxrd")
 
 [node name="CameraMount" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="CameraMount"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 2, 5)
+transform = Transform3D(1, 0, 0, 0, 0.923425, 0.38378, 0, -0.38378, 0.923425, 0, 5.09624, 7.68358)
 
 [node name="PostProcessFilter" type="MeshInstance3D" parent="CameraMount/Camera3D"]
 extra_cull_margin = 16384.0

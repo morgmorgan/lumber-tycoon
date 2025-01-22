@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dyyr7m8jmgp51"]
 
 [ext_resource type="Script" path="res://scenes/HUD/interaction_text.gd" id="1_ls85m"]
-[ext_resource type="Theme" uid="uid://cul2kk8mox0x3" path="res://main_theme.tres" id="2_0n1xi"]
+[ext_resource type="Theme" uid="uid://cul2kk8mox0x3" path="res://resources/main_theme.tres" id="2_0n1xi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4vmn"]
 bg_color = Color(0, 0, 0, 1)

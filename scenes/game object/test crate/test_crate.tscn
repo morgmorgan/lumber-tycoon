@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://hdx6a10y75hu"]
 
-[ext_resource type="Script" path="res://test_crate.gd" id="1_hb1jo"]
+[ext_resource type="Script" path="res://scenes/game object/test crate/test_crate.gd" id="1_hb1jo"]
 [ext_resource type="PackedScene" uid="uid://cxmhth1xa8xsl" path="res://scenes/component/interactable_component.tscn" id="1_xt5p7"]
-[ext_resource type="Texture2D" uid="uid://df8gwpx1r7s3d" path="res://crate.png" id="2_31s5i"]
+[ext_resource type="Texture2D" uid="uid://df8gwpx1r7s3d" path="res://resources/2d/crate.png" id="2_31s5i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vcqhk"]
 radius = 90.0

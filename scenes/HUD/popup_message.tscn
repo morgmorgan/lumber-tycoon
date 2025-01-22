@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dregf3v8483a2"]
 
 [ext_resource type="Script" path="res://scenes/HUD/popup_message.gd" id="1_a20qv"]
-[ext_resource type="Theme" uid="uid://cul2kk8mox0x3" path="res://main_theme.tres" id="2_p88s2"]
+[ext_resource type="Theme" uid="uid://cul2kk8mox0x3" path="res://resources/main_theme.tres" id="2_p88s2"]
 
 [sub_resource type="Animation" id="Animation_660te"]
 resource_name = "fade_early"

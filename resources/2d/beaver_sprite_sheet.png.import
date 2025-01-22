@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqs57lrwbndae"
-path="res://.godot/imported/slime.png-9d614d234157d841fd715094a50092e8.ctex"
+uid="uid://d2vspmvmtmbtv"
+path="res://.godot/imported/beaver_sprite_sheet.png-f4df043d697befd00cfe433bf979e8d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://slime.png"
-dest_files=["res://.godot/imported/slime.png-9d614d234157d841fd715094a50092e8.ctex"]
+source_file="res://resources/2d/beaver_sprite_sheet.png"
+dest_files=["res://.godot/imported/beaver_sprite_sheet.png-f4df043d697befd00cfe433bf979e8d1.ctex"]
 
 [params]
 
