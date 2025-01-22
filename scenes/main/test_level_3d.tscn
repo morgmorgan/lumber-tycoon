@@ -4,24 +4,25 @@
 [ext_resource type="PackedScene" uid="uid://cme2wtk1kljvi" path="res://scenes/game object/test crate/test_crate_3d.tscn" id="2_aqivy"]
 [ext_resource type="PackedScene" uid="uid://dmuhrwbksm6l6" path="res://scenes/game object/trees/basic_tree.tscn" id="3_5belw"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n4lb4"]
-sky_horizon_color = Color(0.699445, 0.703116, 0.711377, 1)
-sky_energy_multiplier = 8.0
-ground_bottom_color = Color(0.412781, 0.358465, 0.295507, 1)
-ground_horizon_color = Color(0.699445, 0.703116, 0.711377, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_76uec"]
+sky_top_color = Color(0.780278, 0.785926, 0.79361, 1)
+sky_horizon_color = Color(0.945069, 0.946482, 0.948403, 1)
+sky_energy_multiplier = 3.0
+ground_bottom_color = Color(1, 1, 1, 1)
+ground_horizon_color = Color(0.945069, 0.946482, 0.948403, 1)
 
-[sub_resource type="Sky" id="Sky_5beht"]
-sky_material = SubResource("ProceduralSkyMaterial_n4lb4")
+[sub_resource type="Sky" id="Sky_v1ej6"]
+sky_material = SubResource("ProceduralSkyMaterial_76uec")
 
-[sub_resource type="Environment" id="Environment_u70tc"]
+[sub_resource type="Environment" id="Environment_pnp0h"]
 background_mode = 2
-sky = SubResource("Sky_5beht")
+sky = SubResource("Sky_v1ej6")
 tonemap_mode = 2
 
 [node name="TestLevel3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_u70tc")
+environment = SubResource("Environment_pnp0h")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)

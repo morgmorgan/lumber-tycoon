@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5j65pqg855il"]
+
+[ext_resource type="PackedScene" uid="uid://cw7wb5s43p1r3" path="res://resources/blend models/beaver.blend" id="1_dmwx0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4um8m"]
+shading_mode = 0
+
+[node name="beaver" instance=ExtResource("1_dmwx0")]
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_4um8m")
