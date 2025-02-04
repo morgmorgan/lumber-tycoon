@@ -16,7 +16,8 @@ func on_interacted():
 	
 	if health <= 0:
 		$InteractableComponent3D.interactable = false
-		$visuals/tree1.visible = false
-		
+		$AnimationPlayer.play("fall")
+		await $AnimationPlayer.animation_finished
 		await $visuals/Dust.finished
+		$visuals/tree1.visible = false
 		queue_free()
