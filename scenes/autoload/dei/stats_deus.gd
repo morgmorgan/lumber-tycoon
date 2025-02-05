@@ -14,7 +14,7 @@ func _ready():
 	wood_value_changed.emit(num_wood)
 	bc_value_changed.emit(num_bc)
 	
-	tree_respawn_time_seconds = 1.0
+	tree_respawn_time_seconds = 10.0
 
 func add_bc(value : int):
 	num_bc += value

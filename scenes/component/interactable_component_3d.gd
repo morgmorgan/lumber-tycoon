@@ -13,8 +13,14 @@ func _ready():
 # Handles player entering / exiting interaction zone
 func on_body_entered(other : Node3D):
 	if interactable and other.is_in_group("player"):
-		GameManager.set_player_interaction_target(self)
+		set_self_as_target()
 	
 func on_body_exited(other : Node3D):
 	if other.is_in_group("player"):
-		GameManager.set_player_interaction_target(self, false)
+		remove_self_as_target()
+
+func set_self_as_target():
+	GameManager.set_player_interaction_target(self)
+
+func remove_self_as_target():
+	GameManager.set_player_interaction_target(self, false)

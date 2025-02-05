@@ -17,9 +17,23 @@ func on_interacted():
 		StatsDeus.add_wood(1)
 	
 	if current_health <= 0:
-		$InteractableComponent3D.interactable = false
-		$AnimationPlayer.play("fall")
-		await $AnimationPlayer.animation_finished
-		await $visuals/Dust.finished
-		$visuals/tree1.visible = false
-		queue_free()
+		die()
+
+func die(respawn : bool = true):
+	$InteractableComponent3D.interactable = false
+	$InteractableComponent3D.remove_self_as_target()
+	$AnimationPlayer.play("fall")
+	await $AnimationPlayer.animation_finished
+	
+	$RespawnTimer.start(StatsDeus.tree_respawn_time_seconds)
+	await $RespawnTimer.timeout
+	
+	if respawn:
+		spawn()
+
+func spawn():
+	$AnimationPlayer.play("spawn")
+	await $AnimationPlayer.animation_finished
+	$InteractableComponent3D.interactable = true
+	current_health = max_health
+	
