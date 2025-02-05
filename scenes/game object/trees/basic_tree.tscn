@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dmuhrwbksm6l6"]
+[gd_scene load_steps=13 format=3 uid="uid://dmuhrwbksm6l6"]
 
 [ext_resource type="Script" path="res://scenes/game object/trees/basic_tree.gd" id="1_4oikg"]
 [ext_resource type="PackedScene" uid="uid://d08p3nmgq8vdn" path="res://resources/blend models/tree1.blend" id="1_4qjrm"]
@@ -41,6 +41,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("visuals/Dust:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("visuals/Dust:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 5.44317, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_v2q7v"]
@@ -89,11 +113,52 @@ tracks/1/keys = {
 "values": [Vector3(1, 1, 1), Vector3(1.02, 1.02, 1.02), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_1k4w6"]
+resource_name = "spawn"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("visuals/tree1:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.803, 0.896, 0.803), Vector3(0.943, 1.1, 0.943), Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("visuals/Dust:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("visuals/Dust:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 8, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kfsbl"]
 _data = {
 "RESET": SubResource("Animation_o5qq0"),
 "fall": SubResource("Animation_x22f5"),
-"shake": SubResource("Animation_v2q7v")
+"shake": SubResource("Animation_v2q7v"),
+"spawn": SubResource("Animation_1k4w6")
 }
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yh3ek"]
@@ -114,6 +179,9 @@ radius = 4.5
 
 [node name="BasicTree" type="StaticBody3D"]
 script = ExtResource("1_4oikg")
+
+[node name="RespawnTimer" type="Timer" parent="."]
+one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
